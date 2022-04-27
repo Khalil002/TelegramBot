@@ -42,7 +42,7 @@ def handle_message(update, context):
             cipher = False
     elif(decipher):
         update.message.reply_text('Texto descifrado: ')
-        update.message.reply_text(cc.decrypt(msg, shift))
+        update.message.reply_text(cc.decrypt(msg))
         decipher = False
     else:
         update.message.reply_text('Lo siento, no entendí. Escribe el comando /ayuda para más información.')
