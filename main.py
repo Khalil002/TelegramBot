@@ -1,3 +1,4 @@
+from bs4 import SoupStrainer
 import Constants as keys
 from telegram.ext import *
 import CaeserCipher as cc
@@ -28,10 +29,11 @@ def decipher_command(update, context):
     
 def handle_message(update, context):
     global cipher, decipher, index, text, shift
-    msg = str(update.message.text).lower()
+    msg = str(update.message.text)
     if(cipher):
         if(index==0):
             text = msg
+            print("El mensaje resibido es: "+text)
             update.message.reply_text('Escriba el numero de desplazamiento:')
             index = 1
         elif(index==1):
