@@ -44,6 +44,10 @@ def handle_message(update, context):
             cipher = False
     elif(decipher):
         update.message.reply_text('Texto descifrado: ')
+        texta = cc.decrypt(msg)
+        textb = cc.decrypt2(msg)
+        print('1: ',texta)
+        print('2: ',textb)
         update.message.reply_text(cc.decrypt(msg))
         decipher = False
     else:
