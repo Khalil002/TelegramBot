@@ -11,7 +11,7 @@ Allí vinieron, confundidos con la hojarasca humana, arrastrados por su impetuos
 de los hospitales, de los salones de diversión, de las plantas eléctricas; desperdicios de mujeres solas y de hombres que 
 amarraban la mula en un horcón del hotel, trayendo como un único equipaje un baúl de madera o un atadillo de ropa, 
 y a los pocos meses tenían casa propia, 
-dos concubinas y el título militar que les quedaron debiendo por haber llegado tarde a la guerra”.
+dos concubinas y el título militar que les quedaron debiendo por haber llegado tarde a la guerra.
 El hombre, desde su origen, guiado por unas miras que pretenden ser prácticas, ha ido enmendando la plana a la Naturaleza y convirtiéndola en campo. 
 El hombre, paso a paso, ha hecho su paisaje, amoldándolo a sus exigencias. 
 Con esto, el campo ha seguido siendo campo, pero ha dejado de ser Naturaleza. 
@@ -41,3 +41,4 @@ hola
 el agua llegado
 el agua
 Este es UN mensaje c1fr4d0 CON números y caracteres espec_i4les_.
+pene
