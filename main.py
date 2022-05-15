@@ -30,6 +30,10 @@ def decipher_command(update, context):
     decipher = True
     update.message.reply_text('Escriba el texto que desea descifrar:')
 
+#Esta funcion es llamada en caso de que suceda un error en el bot y imprime dicho error
+def error(update, context):
+    print(f"Update {update} caused error  {context.error}")
+    
 #Aqui se reciben los mensajes ordinarios del usuario
 def handle_message(update, context):
     global cipher, decipher, index, text, shift
@@ -56,10 +60,6 @@ def handle_message(update, context):
     else:
         #Si ninguna señal esta activa el bot simplemente no sabe que hacer asique le pide al usuario que escriba un comando de la lista de ayuda
         update.message.reply_text('Lo siento, no entendí. Escribe el comando /ayuda para más información.')
-        
-#Esta funcion es llamada en caso de que suceda un error en el bot y imprime dicho error
-def error(update, context):
-    print(f"Update {update} caused error  {context.error}")
 
 #Aqui es donde se crea el bot y se le dice como manejar cada caso
 def main():
@@ -72,11 +72,11 @@ def main():
     dp.add_handler(CommandHandler("cifrar", cipher_command))
     dp.add_handler(CommandHandler("descifrar", decipher_command))
     
-    #Manejo de mensajes
-    dp.add_handler(MessageHandler(Filters.text, handle_message))
-    
     #Manejo de errores
     dp.add_error_handler(error)
+    
+    #Manejo de mensajes
+    dp.add_handler(MessageHandler(Filters.text, handle_message))
     
     #Empezar a sondear
     updater.start_polling()
@@ -87,3 +87,4 @@ def main():
 #Empezar el bot
 print('Bot started...')
 main()
+
