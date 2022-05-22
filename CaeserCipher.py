@@ -30,8 +30,10 @@ def flatten(shift):
 
 #Recibe el mensaje a desencriptar y calcula el shift necesario comparando todos los shifts possibles
 def decrypt(input_text):
-    d = enchant.Dict("es_CO")
-    
+    txt_file = open("Dictionary.txt", "r")
+    file_content = txt_file.read()
+    content_list = file_content.split("\n")
+    d = dict(zip(content_list, content_list))
     most_common_letter = collections.Counter(input_text.replace(' ', '')).most_common(1)[0][0]
 
     #Se busca el shift que nos de la mayor cantidad de palabras correctamente decriptadas
@@ -45,12 +47,13 @@ def decrypt(input_text):
         for sc in special_characters:
             text = text.replace(sc, '')
         words = text.split()
-        
+
         count=0
         for word in words:
-            if(d.check(word)  and len(word)>1):
+            if(word in d  and len(word)>1):
                 count+=1
-                
+
+            
         if(max<count):
             max=count
             output_text=moveText(input_text, -1*shift)
