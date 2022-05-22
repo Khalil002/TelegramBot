@@ -43,7 +43,7 @@ def handle_message(update, context):
         #En caso de que la señal de cifrar esta activa, se empieza el proceso para recolectar el texto y el shift del usuario
         if(index==0):
             text = msg
-            print("El mensaje resibido es: "+text)
+            print("El mensaje recibido es: "+text)
             update.message.reply_text('Escriba el numero de desplazamiento:')
             index = 1
         elif(index==1):
