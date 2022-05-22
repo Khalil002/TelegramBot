@@ -58,6 +58,8 @@ def decrypt(input_text):
             max=count
             output_text=moveText(input_text, -1*shift)
 
+    if(output_text==""):
+        output_text= "No se ha podido descifrar su mensaje"
     return output_text
         
 
