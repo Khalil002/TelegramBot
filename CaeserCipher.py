@@ -1,4 +1,3 @@
-import enchant
 import collections
 
 characters  = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZáéíóú0123456789!#$%&'()*+,-./:;<=>?@[\]^_`{|}~" 
