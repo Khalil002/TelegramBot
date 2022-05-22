@@ -30,7 +30,7 @@ def flatten(shift):
 
 #Recibe el mensaje a desencriptar y calcula el shift necesario comparando todos los shifts possibles
 def decrypt(input_text):
-    txt_file = open("Dictionary.txt", "r")
+    txt_file = open("Dictionary.txt", encoding="utf8")
     file_content = txt_file.read()
     content_list = file_content.split("\n")
     d = dict(zip(content_list, content_list))
