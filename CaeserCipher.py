@@ -10,6 +10,24 @@ characters_by_frequency = "eEaAoOsSnRrNiIlDdLuCtTcUmMpPqByGbVhYvQgHjFfZzJñÑkXw
 def encrypt(input_text, shift):
     return moveText(input_text, shift)
 
+#Esta es la funcion que se encarga de mover cada carácter del texto por el shift
+def moveText(input_text, shift):
+    output_text = ""
+    for caracter in input_text:
+        #En caso de que el carácter sea el espacio, se salta
+        if(caracter == ' '):
+            output_text+=caracter
+        else:
+            index = characters.find(caracter)
+            new_index = new_index = flatten(index + shift) 
+            output_text+= characters[new_index]
+    
+    return output_text
+
+#Esta funcion se encarga de mantener el shift dentro del tamaño de la lista de caracteres
+def flatten(shift):
+    return shift%len(characters)
+
 #Recibe el mensaje a desencriptar y calcula el shift necesario comparando todos los shifts possibles
 def decrypt(input_text):
     d = enchant.Dict("es_CO")
@@ -39,20 +57,6 @@ def decrypt(input_text):
 
     return output_text
         
-#Esta es la funcion que se encarga de mover cada carácter del texto por el shift
-def moveText(input_text, shift):
-    output_text = ""
-    for caracter in input_text:
-        #En caso de que el carácter sea el espacio, se salta
-        if(caracter == ' '):
-            output_text+=caracter
-        else:
-            index = characters.find(caracter)
-            new_index = new_index = flatten(index + shift) 
-            output_text+= characters[new_index]
-    
-    return output_text
 
-#Esta funcion se encarga de mantener el shift dentro del tamaño de la lista de caracteres
-def flatten(shift):
-    return shift%len(characters)
+
+
